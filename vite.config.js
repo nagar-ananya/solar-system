@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite';
 
-// Relative base so the built `dist/` works from any sub-path (e.g. GitHub Pages).
 export default defineConfig({
+  // Relative asset paths so the build works under a sub-path such as
+  // https://<user>.github.io/solar-system/.
   base: './',
-  // three.js alone is ~580 kB minified; that's expected, not a problem to split.
-  build: { chunkSizeWarningLimit: 800 },
+  build: {
+    // Built into docs/ so GitHub Pages can serve it straight from main.
+    outDir: 'docs',
+    // three.js alone is ~580 kB minified; that's expected, not a problem to split.
+    chunkSizeWarningLimit: 800,
+  },
 });

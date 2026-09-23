@@ -10,9 +10,16 @@ their night sides visible.
 ```bash
 npm install
 npm run dev      # start the dev server, then open the printed URL
-npm run build    # production build into dist/
+npm run build    # production build into docs/
 npm run preview  # serve the production build
 ```
+
+## GitHub Pages
+
+The production build is committed in `docs/`. To publish it, open the repo's
+**Settings → Pages** and set **Source** to *Deploy from a branch*, **Branch**
+to `main` and the folder to `/docs`. After changing the code, run
+`npm run build` and commit the updated `docs/` folder.
 
 ## Controls
 
@@ -57,6 +64,7 @@ src/sun.js          Sun shader and glow
 src/starfield.js    background stars
 src/style.css       UI styles
 public/textures/    planet surface maps and the star sprite
+docs/               production build served by GitHub Pages (generated)
 ```
 
 ## Credits
